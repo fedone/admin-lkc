@@ -1,4 +1,4 @@
-agm-map {
+img {
     height: 200px;
     width: 100%;
 }
@@ -15,7 +15,7 @@ agm-map {
 }
 
 @media screen and (max-width: 480px) and (orientation: portrait) {
-     agm-map {
+     img {
       height: 330px !important;
      }
 
