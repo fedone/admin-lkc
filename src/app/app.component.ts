@@ -1,13 +1,11 @@
 import { Component, ViewChild } from '@angular/core';
-import { fadeInAnimation } from './_animations/index';
 
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
-  animations: [fadeInAnimation],
-  host: {'[@fadeInAnimation]': '' }
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+	title = 'Admin LKC'
 }

@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Pipe, PipeTransform } from '@angular/core';
 import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
 import { Subject } from 'rxjs/Subject';
 import * as firebase from 'firebase/app';
-
+import { fadeInAnimation } from '../_animations/index';
 
 @Component({
   selector: 'app-anagrafica',
@@ -21,11 +21,16 @@ import * as firebase from 'firebase/app';
 	
   `,
   styleUrls: ['./anagrafica.component.css'],
+  animations: [fadeInAnimation],
+  host: { '[@fadeInAnimation]': '' }
 })
 export class AnagraficaComponent implements OnInit {
+
+  title: 'Anagrafica';
    
  items: FirebaseListObservable<any>;
  sizeSubject: Subject<any>;
+ filteredItems: any;
   
   constructor(db: AngularFireDatabase ) {
   	this.sizeSubject = new Subject();
@@ -38,6 +43,5 @@ export class AnagraficaComponent implements OnInit {
 
   ngOnInit() {
   }
-
 
 }

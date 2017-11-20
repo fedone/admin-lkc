@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+
 html, body {
   font-family: 'Roboto', 'Helvetica', sans-serif;
 }
@@ -27,6 +28,15 @@ span:focus {
   border-radius: 24px;
 }
 
+
+.mdl-layout__drawer.is-visible~.mdl-layout__content.mdl-layout__content {
+  overflow: auto !important;
+}
+
+.logo {
+  width: 30px;
+  margin-left: 10px;
+}
 
 .demo-layout .mdl-layout__header .mdl-layout__drawer-button {
   color: rgba(0, 0, 0, 0.54);
@@ -101,8 +111,9 @@ span:focus {
   font-weight: 500;
 }
 .demo-layout .demo-navigation .mdl-navigation__link:hover {
-  background-color: #00BCD4;
-  color: #37474F;
+  background-color: rgba(255, 255, 255, 0.3);
+  color: #fff;
+  transition: 0.2s;
 }
 .demo-navigation .mdl-navigation__link .material-icons {
   font-size: 24px;

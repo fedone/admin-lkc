@@ -34,6 +34,9 @@ img {
     padding: 0;
   }
 
+.mdl-card {
+  border-radius: 10px;
+}
 
 
     /**

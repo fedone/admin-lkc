@@ -109,3 +109,7 @@ span:focus {
   color: rgba(255, 255, 255, 0.56);
   margin-right: 32px;
 }
+
+.mdl-card {
+  border-radius: 10px;
+}

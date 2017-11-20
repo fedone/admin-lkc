@@ -14,6 +14,8 @@ import { StaticMapGeneratorComponent } from './static-map-generator';
 })
 export class EventiComponent implements OnInit {
   
+  title: 'Eventi';
+
   constructor() {}
 
   ngOnInit() {
