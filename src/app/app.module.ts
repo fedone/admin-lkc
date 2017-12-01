@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { CommonModule } from '@angular/common';
@@ -20,7 +21,7 @@ import { MessagingService } from './messaging.service';
 
 import { BaseRequestOptions } from '@angular/http';
 
-//  AngularFire2 (Necessario per hosting, noSql DB e autenticazione utente)
+//  Direttive firebase per autenticazione e database
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuth } from 'angularfire2/auth';
@@ -55,7 +56,6 @@ import { CardGeneratorComponent } from './console/card-generator/card-generator.
 import { PieChartComponent } from './contabilita/pie-chart/pie-chart.component';
 import { LineChartComponent } from './contabilita/line-chart/line-chart.component';
 import { ChartsModule } from 'ng2-charts';
-import { DialogOutletComponent } from './dialog-outlet/dialog-outlet.component';
 
 export const firebaseConfig = {
 
@@ -81,12 +81,12 @@ export const firebaseConfig = {
     TeamBuilderComponent,
     CardGeneratorComponent,
     PieChartComponent,
-    LineChartComponent,
-    DialogOutletComponent
+    LineChartComponent
   ],
   imports: [
     AppRoutingModule,
     BrowserModule,
+    HttpClientModule,
     FormsModule,
     HttpModule,
     CommonModule,
@@ -97,7 +97,7 @@ export const firebaseConfig = {
     AngularFireModule.initializeApp(firebaseConfig),
     ChartsModule
   ],
-  providers: [AuthGuard,AngularFireAuth, AngularFireDatabase, MessagingService],
+  providers: [AuthGuard,AngularFireAuth, AngularFireDatabase, MessagingService, HttpClientModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,8 @@
 import { Component, OnInit, CUSTOM_ELEMENTS_SCHEMA, ViewEncapsulation } from '@angular/core';
 import { trigger, transition, style, animate, query, stagger, animateChild } from '@angular/animations';
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+import { HttpClient } from '@angular/common/http';
+import { Subject } from 'rxjs/Subject';
 import { ChartsModule } from 'ng2-charts';
 
 @Component({
@@ -9,14 +12,22 @@ import { ChartsModule } from 'ng2-charts';
       <canvas baseChart style="position: relative; width: 40vh; height: 40vh;"
               [data]="pieChartData"
               [labels]="pieChartLabels"
-              [chartType]="pieChartType"
-              (chartHover)="chartHovered($event)"
-              (chartClick)="chartClicked($event)"></canvas>
+              [chartType]="pieChartType"></canvas>
     </div>
     `,
   styleUrls: ['./pie-chart.component.css']
 })
 export class PieChartComponent {
+
+    results: string[];
+
+      constructor(private http: HttpClient){}
+
+      ngOnInit(): void{
+        this.http.get('https://lambrate-firebase-console.firebaseio.com/graph.json').subscribe(data => {
+          this.results = data['results'];
+        })
+      }
 
   public pieChartLabels:string[] = ['Quote pagate', 'Quote mancanti'];
   public pieChartData:number[] = [400, 700];
@@ -27,11 +38,5 @@ export class PieChartComponent {
 
   //events
 
-  public chartClicked(e:any):void {
-     console.log(e);
-   }
-  
-   public chartHovered(e:any):void {
-     console.log(e);
-   }
+
 }

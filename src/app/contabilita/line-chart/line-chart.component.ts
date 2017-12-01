@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+import { Subject } from 'rxjs/Subject';
+import { HttpClient } from '@angular/common/http';
 import { ChartsModule } from 'ng2-charts';
 
 @Component({
@@ -20,6 +23,7 @@ import { ChartsModule } from 'ng2-charts';
   styleUrls: ['./line-chart.component.css']
 })
 export class LineChartComponent {
+
 
 	public lineChartData:Array<any> = [
 		{data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A'},

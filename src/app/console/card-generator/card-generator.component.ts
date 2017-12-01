@@ -28,7 +28,6 @@ export class CardGeneratorComponent implements OnInit {
   
   items: FirebaseListObservable<any>;
   sizeSubject: Subject<any>; 
-  
 
 
   constructor(db: AngularFireDatabase) {

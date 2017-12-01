@@ -56,8 +56,3 @@ export class StaticMapGeneratorComponent implements OnInit {
   ngOnInit() {
   }
 }
-
-function pushEvent(db: AngularFireDatabase){
-
-
-}
